@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ganadara Port Boarding Pass</title>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sea:#0e3b4f;--deep:#082635;--paper:#f2f6f4;--ink:#10252e;--buoy:#e8512b;--foam:#bfe0e0;--land:#cdd9cf;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--deep);color:var(--ink);font-family:"Noto Sans KR",system-ui,sans-serif;min-height:100%;padding:20px 14px 40px}
+.wrap{max-width:420px;margin:0 auto}
+h1{font-family:"Do Hyeon",sans-serif;font-weight:400;color:#fff;font-size:28px;margin:0 0 4px}
+.sub{color:var(--foam);font-size:14px;margin:0 0 16px}
+.form{display:flex;gap:8px;margin-bottom:18px}
+input{flex:1;min-width:0;padding:12px;border-radius:8px;border:2px solid var(--foam);background:#fff;font:inherit;font-size:16px}
+button{padding:12px 16px;border:0;border-radius:8px;background:var(--buoy);color:#fff;font:inherit;font-weight:700;font-size:15px;cursor:pointer}
+button:focus-visible,input:focus-visible{outline:3px solid #ffd166;outline-offset:2px}
+.pass{background:var(--paper);border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.top{background:var(--sea);color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}
+.top b{font-family:"Do Hyeon",sans-serif;font-weight:400;font-size:22px}
+.top span{font-size:12px;color:var(--foam)}
+.sec{padding:14px 16px}
+.row{display:flex;justify-content:space-between;gap:10px}
+.lbl{font-size:11px;color:#5a7078;margin-bottom:2px}
+.val{font-weight:700;font-size:16px}
+.route{display:flex;align-items:center;gap:8px;margin:2px 0 10px}
+.route .c{font-family:"Do Hyeon",sans-serif;font-size:30px;line-height:1}
+.route .l{flex:1;border-top:2px dashed var(--buoy);position:relative}
+.route .l:after{content:"⛴";position:absolute;left:50%;top:-14px;transform:translateX(-50%);background:var(--paper);padding:0 4px}
+svg.map{width:100%;height:auto;display:block;border-radius:10px;background:#9fcfd6}
+.phrase{background:#fff;border-left:5px solid var(--buoy);border-radius:6px;padding:12px 14px}
+.kr{font-size:24px;font-weight:700;line-height:1.35}
+.rom{font-size:14px;color:#5a7078;margin:2px 0 6px}
+.en{font-size:16px}
+.perf{border-top:2px dashed #9ab;margin:0 12px;position:relative}
+.perf:before,.perf:after{content:"";position:absolute;top:-11px;width:20px;height:20px;border-radius:50%;background:var(--deep)}
+.perf:before{left:-22px}.perf:after{right:-22px}
+.num{font-family:"Do Hyeon",sans-serif;font-size:26px;letter-spacing:1px;color:var(--sea)}
+#bars{display:flex;height:44px;margin-top:10px;gap:2px;align-items:stretch}
+#bars i{background:var(--ink);display:block}
+.ship{animation:none}
+@media (prefers-reduced-motion:no-preference){.pass.new{animation:pop .5s ease-out}}
+@keyframes pop{from{transform:translateY(12px);opacity:.4}to{transform:none;opacity:1}}
+</style></head><body><div class="wrap">
+<h1>가나다라 항구 · Ganadara Port</h1>
+<p class="sub">Enter your name and collect your boarding pass.</p>
+<div class="form"><input id="name" placeholder="Your name" maxlength="24" aria-label="Your name"><button id="go">Get my pass</button></div>
+
+<div class="pass" id="pass">
+ <div class="top"><b>BOARDING PASS</b><span>HELCA 2026</span></div>
+ <div class="sec">
+  <div class="route"><div><div class="c">KUL</div><div class="lbl">Port Klang, Malaysia</div></div><div class="l"></div><div style="text-align:right"><div class="c">PUS</div><div class="lbl">Busan, Korea</div></div></div>
+  <svg class="map" viewBox="0 0 400 360" role="img" aria-label="Voyage map from Port Klang, Malaysia to Busan, South Korea">
+   <g fill="#cdd9cf" stroke="#8fa597" stroke-width="1">
+    <path d="M0,0 L250,0 L275,27 L255,27 L240,45 L250,54 L265,90 L250,117 L220,148 L180,157 L150,171 L100,153 L0,150Z"/>
+    <path d="M0,150 L100,153 L115,180 L130,216 L140,234 L143,252 L115,261 L100,279 L75,265 L60,285 L51,302 L0,290Z"/>
+    <path d="M51,302 L65,304 L84,320 L85,335 L92,347 L84,348 L63,335 L54,320Z"/>
+    <path d="M146,344 L160,334 L180,330 L200,315 L217,297 L230,308 L225,322 L230,338 L210,350 L146,356Z"/>
+    <path d="M298,0 L345,0 L344,22 L346,43 L326,50 L313,47 L316,31 L296,18Z" fill="#e3ead9"/>
+    <path d="M352,70 L360,60 L400,40 L400,60 L370,66 L360,75Z"/>
+    <ellipse cx="315" cy="59" rx="7" ry="3"/><ellipse cx="260" cy="146" rx="5" ry="12"/><ellipse cx="262" cy="218" rx="8" ry="14"/>
+   </g>
+   <path id="rt" d="M64,333 C120,300 150,250 200,200 S290,100 300,70 S330,50 340,44" fill="none" stroke="#e8512b" stroke-width="3" stroke-dasharray="7 6"/>
+   <circle cx="64" cy="333" r="6" fill="#e8512b" stroke="#fff" stroke-width="2"/>
+   <circle cx="340" cy="44" r="6" fill="#0e3b4f" stroke="#fff" stroke-width="2"/>
+   <text x="76" y="326" font-size="13" font-weight="700" fill="#10252e">Port Klang</text>
+   <text x="332" y="86" font-size="13" font-weight="700" fill="#10252e" text-anchor="end">Busan</text>
+   <text x="318" y="12" font-size="11" fill="#5a7078" text-anchor="middle">KOREA</text>
+   <text x="12" y="250" font-size="11" fill="#5a7078">VIETNAM</text>
+   <text x="165" y="300" font-size="11" fill="#2f6f7c" font-style="italic">South China Sea</text>
+   <text x="232" y="190" font-size="11" fill="#2f6f7c" font-style="italic">Pacific Ocean</text>
+   <text x="14" y="90" font-size="11" fill="#5a7078">CHINA</text>
+   <text x="62" y="352" font-size="9" fill="#5a7078">MALAYSIA</text>
+   <text x="172" y="352" font-size="9" fill="#5a7078">BORNEO</text>
+   <text id="ship" font-size="22" text-anchor="middle" dy="7">⛴<animateMotion id="am" dur="6s" repeatCount="indefinite" calcMode="linear"><mpath href="#rt"/></animateMotion></text>
+  </svg>
+ </div>
+ <div class="sec" style="padding-top:0"><div class="lbl">Voyage phrase</div>
+  <div class="phrase"><div class="kr" id="kr"></div><div class="rom" id="rom"></div><div class="en" id="en"></div></div></div>
+ <div class="perf"></div>
+ <div class="sec">
+  <div class="row"><div><div class="lbl">Passenger</div><div class="val" id="pn">Guest</div></div><div><div class="lbl">Gate</div><div class="val" id="gate"></div></div><div><div class="lbl">Seat</div><div class="val" id="seat"></div></div></div>
+  <div class="lbl" style="margin-top:12px">Boarding pass number</div>
+  <div class="num" id="num"></div>
+  <div id="bars" aria-hidden="true"></div>
+ </div>
+</div>
+<p class="sub" style="margin-top:14px">Screenshot your pass and show it at the Ganadara Port booth.</p>
+</div>
+<script>
+const P=[["순풍을 타고 가요","Sunpung-eul tago gayo","Let's sail with a tailwind."],
+["바다가 나를 부르네요","Bada-ga nareul bureuneyo","The sea is calling me."],
+["닻을 올려라!","Dat-eul ollyeora!","Raise the anchor!"],
+["항해를 시작해요","Hanghae-reul sijakhaeyo","Let's begin the voyage."],
+["새로운 항구에서 만나요","Saeroun hanggu-eseo mannayo","See you at a new port."],
+["배가 곧 출발해요","Bae-ga got chulbalhaeyo","The ship departs soon."],
+["파도는 두렵지 않아요","Pado-neun duryeopji anayo","I'm not afraid of the waves."],
+["환영합니다, 선장님","Hwanyeonghamnida, seonjangnim","Welcome aboard, Captain."],
+["같이 여행해서 좋아요","Gachi yeohaenghaeseo joayo","I'm glad to travel together."],
+["별을 보며 길을 찾아요","Byeol-eul bomyeo gil-eul chajayo","I find my way by the stars."],
+["안전한 항해 되세요","Anjeonhan hanghae doeseyo","Have a safe voyage."],
+["한국어의 바다로 오세요","Hangugeo-ui bada-ro oseyo","Come to the sea of Korean."]];
+const $=id=>document.getElementById(id),R=n=>Math.floor(Math.random()*n);
+let last=-1;
+function gen(){
+ let i;do{i=R(P.length)}while(i===last);last=i;
+ $('kr').textContent=P[i][0];$('rom').textContent=P[i][1];$('en').textContent=P[i][2];
+ const t=Date.now().toString(36).slice(-4).toUpperCase();
+ const num="GDP-"+t+"-"+String(R(10000)).padStart(4,"0");
+ $('num').textContent=num;
+ $('pn').textContent=$('name').value.trim()||"Guest";
+ $('gate').textContent="가 "+(1+R(9));
+ $('seat').textContent=(1+R(30))+"ABCDEF"[R(6)];
+ const b=$('bars');b.innerHTML="";
+ for(const ch of num+num){const w=1+(ch.charCodeAt(0)%4);const e=document.createElement('i');e.style.width=w*2+"px";e.style.opacity=ch=="-"?0:1;b.appendChild(e)}
+ const p=$('pass');p.classList.remove('new');void p.offsetWidth;p.classList.add('new');
+}
+$('go').onclick=gen;$('name').addEventListener('keydown',e=>{if(e.key==='Enter')gen()});
+gen();
+</script></body></html>
